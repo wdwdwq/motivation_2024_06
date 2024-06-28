@@ -1,8 +1,11 @@
 package org.example;
 
+import org.example.motivation.entity.Motivation;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 
 public class App {
 
@@ -54,6 +57,12 @@ public class App {
 
                 for (int i = motivations.size() - 1; i >= 0; i--) {
                     Motivation motivation = motivations.get(i);
+
+                    if (motivation.getSource().length() > 7) {
+                        System.out.printf("   %d  //    %s    //    %s  \n", motivation.getId(), motivation.getSource().substring(0, 5) + "...", motivation.getBody());
+                        continue;
+                    }
+
                     System.out.printf("   %d  //    %s     //    %s  \n", motivation.getId(), motivation.getSource(), motivation.getBody());
                 }
             }
