@@ -5,7 +5,6 @@ public class Motivation {
     private String body;
     private String source;
 
-
     public Motivation(int id, String body, String source) {
         this.id = id;
         this.body = body;
