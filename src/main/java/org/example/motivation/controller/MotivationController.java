@@ -1,5 +1,6 @@
 package org.example.motivation.controller;
 
+import org.example.Container;
 import org.example.motivation.entity.Motivation;
 
 import java.util.ArrayList;
@@ -8,13 +9,11 @@ import java.util.Scanner;
 
 public class MotivationController {
 
-    int lastId = 0;
+    int lastId;
     List<Motivation> motivations;
-    Scanner sc;
 
 
-    public MotivationController(Scanner sc) {
-        this.sc = sc;
+    public MotivationController() {
         lastId = 0;
         motivations = new ArrayList<>();
     }
@@ -22,9 +21,9 @@ public class MotivationController {
     public void add() {
         int id = lastId + 1;
         System.out.print("body : ");
-        String body = sc.nextLine();
+        String body = Container.getScanner().nextLine();
         System.out.print("source : ");
-        String source = sc.nextLine();
+        String source = Container.getScanner().nextLine();
 
         Motivation motivation = new Motivation(id, body, source);
 
