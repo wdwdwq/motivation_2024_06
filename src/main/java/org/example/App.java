@@ -20,7 +20,7 @@ public class App {
                 systemController.exit();
                 break;
             } else if (cmd.length() == 0) {
-                System.out.println("명령어 입력해");
+                System.out.println("Enter the command");
                 continue;
             }
 
@@ -28,6 +28,15 @@ public class App {
                 motivationController.add();
             } else if (cmd.equals("list")) {
                 motivationController.list();
+            } else if (cmd.startsWith("delete")) {
+                // parsing
+
+                String[] cmdBits = cmd.split(" ");
+
+                motivationController.delete();
+                System.out.println(cmd);
+            }else{
+                System.out.println("This command cannot be used");
             }
         }
     }

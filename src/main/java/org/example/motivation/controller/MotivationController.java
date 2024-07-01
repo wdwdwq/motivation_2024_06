@@ -29,13 +29,13 @@ public class MotivationController {
 
         motivations.add(motivation);
 
-        System.out.printf("%d번 motivation이 등록 되었습니다\n", id);
+        System.out.printf("Motivation number %d has been registered\n", id);
         lastId++; // 마지막 번호 증가
     }
 
     public void list() {
         if (motivations.size() == 0) {
-            System.out.println("등록된 motivation 없음");
+            System.out.println("No registered motivation");
             return;
         }
         System.out.println("== motivation list ==");
@@ -52,5 +52,8 @@ public class MotivationController {
 
             System.out.printf("   %d  //    %s     //    %s  \n", motivation.getId(), motivation.getSource(), motivation.getBody());
         }
+    }
+
+    public void delete() {
     }
 }
